@@ -528,24 +528,31 @@ function OrionLib:MakeWindow(WindowConfig)
 		}), "Stroke"), 
 		TabHolder,
 		SetChildren(SetProps(MakeElement("TFrame"), {
-			AnchorPoint = Vector2.new(0, 0.5),
-			Size = UDim2.new(0, 32, 0, 32),
-			Position = UDim2.new(0, 10, 0.5, 0)
+			Size = UDim2.new(1, 0, 0, 50),
+			Position = UDim2.new(0, 0, 1, -50)
 		}), {
-			AddThemeObject(MakeElement("Stroke"), "Stroke"),
-			MakeElement("Corner", 1)
-		}),
-		AddThemeObject(SetProps(MakeElement("Label", "Hello :D", WindowConfig.HidePremium and 14 or 13), {
-			Size = UDim2.new(1, -60, 0, 13),
-			Position = WindowConfig.HidePremium and UDim2.new(0, 50, 0, 19) or UDim2.new(0, 50, 0, 12),
-			Font = Enum.Font.FredokaOne,
-			ClipsDescendants = true
-		}), "Text"),
-		AddThemeObject(SetProps(MakeElement("Label", "", 12), {
-			Size = UDim2.new(1, -60, 0, 12),
-			Position = UDim2.new(0, 50, 1, -25),
-			Visible = not WindowConfig.HidePremium
-		}), "TextDark")
+			AddThemeObject(SetProps(MakeElement("Frame"), {
+				Size = UDim2.new(1, 0, 0, 1)
+			}), "Stroke"), 
+			SetChildren(SetProps(MakeElement("TFrame"), {
+				AnchorPoint = Vector2.new(0, 0.5),
+				Size = UDim2.new(0, 32, 0, 32),
+				Position = UDim2.new(0, 10, 0.5, 0)
+			}), {
+				AddThemeObject(MakeElement("Stroke"), "Stroke"),
+				MakeElement("Corner", 1)
+			}),
+			AddThemeObject(SetProps(MakeElement("Label", "Hello :D", WindowConfig.HidePremium and 14 or 13), {
+				Size = UDim2.new(1, -60, 0, 13),
+				Position = WindowConfig.HidePremium and UDim2.new(0, 50, 0, 19) or UDim2.new(0, 50, 0, 12),
+				Font = Enum.Font.FredokaOne,
+				ClipsDescendants = true
+			}), "Text"),
+			AddThemeObject(SetProps(MakeElement("Label", "", 12), {
+				Size = UDim2.new(1, -60, 0, 12),
+				Position = UDim2.new(0, 50, 1, -25),
+				Visible = not WindowConfig.HidePremium
+			}), "TextDark")
 		}),
 	}), "Second")
 
