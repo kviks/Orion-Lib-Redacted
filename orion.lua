@@ -25,6 +25,7 @@ local OrionLib = {
 	SaveCfg = false
 }
 
+--Feather Icons https://github.com/evoincorp/lucideblox/tree/master/src/modules/util - Created by 7kayoh
 local Icons = {}
 
 local Success, Response = pcall(function()
@@ -272,7 +273,7 @@ end)
 
 CreateElement("TFrame", function()
 	local TFrame = Create("Frame", {
-		BackgroundTransparency = 0.2
+		BackgroundTransparency = 1
 	})
 	return TFrame
 end)
@@ -301,7 +302,7 @@ CreateElement("Button", function()
 	local Button = Create("TextButton", {
 		Text = "",
 		AutoButtonColor = false,
-		BackgroundTransparency = 0.2,
+		BackgroundTransparency = 1,
 		BorderSizePixel = 0
 	})
 	return Button
@@ -309,7 +310,7 @@ end)
 
 CreateElement("ScrollFrame", function(Color, Width)
 	local ScrollFrame = Create("ScrollingFrame", {
-		BackgroundTransparency = 0.2,
+		BackgroundTransparency = 1,
 		MidImage = "rbxassetid://7445543667",
 		BottomImage = "rbxassetid://7445543667",
 		TopImage = "rbxassetid://7445543667",
@@ -324,7 +325,7 @@ end)
 CreateElement("Image", function(ImageID)
 	local ImageNew = Create("ImageLabel", {
 		Image = ImageID,
-		BackgroundTransparency = 0.2
+		BackgroundTransparency = 1
 	})
 
 	if GetIcon(ImageID) ~= nil then
@@ -337,7 +338,7 @@ end)
 CreateElement("ImageButton", function(ImageID)
 	local Image = Create("ImageButton", {
 		Image = ImageID,
-		BackgroundTransparency = 0.2
+		BackgroundTransparency = 1
 	})
 	return Image
 end)
@@ -350,7 +351,7 @@ CreateElement("Label", function(Text, TextSize, Transparency)
 		TextSize = TextSize or 15,
 		Font = Enum.Font.FredokaOne,
 		RichText = true,
-		BackgroundTransparency = 0.2,
+		BackgroundTransparency = 1,
 		TextXAlignment = Enum.TextXAlignment.Left
 	})
 	return Label
@@ -486,7 +487,7 @@ function OrionLib:MakeWindow(WindowConfig)
 	local CloseBtn = SetChildren(SetProps(MakeElement("Button"), {
 		Size = UDim2.new(0.5, 0, 1, 0),
 		Position = UDim2.new(0.5, 0, 0, 0),
-		BackgroundTransparency = 0.2
+		BackgroundTransparency = 1
 	}), {
 		AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://7072725342"), {
 			Position = UDim2.new(0, 9, 0, 6),
@@ -496,7 +497,7 @@ function OrionLib:MakeWindow(WindowConfig)
 
 	local MinimizeBtn = SetChildren(SetProps(MakeElement("Button"), {
 		Size = UDim2.new(0.5, 0, 1, 0),
-		BackgroundTransparency = 0.2
+		BackgroundTransparency = 1
 	}), {
 		AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://7072719338"), {
 			Position = UDim2.new(0, 9, 0, 6),
@@ -554,10 +555,10 @@ function OrionLib:MakeWindow(WindowConfig)
 				AddThemeObject(MakeElement("Stroke"), "Stroke"),
 				MakeElement("Corner", 1)
 			}),
-			AddThemeObject(SetProps(MakeElement("Label", LocalPlayer.DisplayName, WindowConfig.HidePremium and 14 or 13), {
+			AddThemeObject(SetProps(MakeElement("Label", "User", WindowConfig.HidePremium and 14 or 13), {
 				Size = UDim2.new(1, -60, 0, 13),
 				Position = WindowConfig.HidePremium and UDim2.new(0, 50, 0, 19) or UDim2.new(0, 50, 0, 12),
-				Font = Enum.Font.GothamBold,
+				Font = Enum.Font.FredokaOne,
 				ClipsDescendants = true
 			}), "Text"),
 			AddThemeObject(SetProps(MakeElement("Label", "", 12), {
@@ -1172,7 +1173,7 @@ function OrionLib:MakeWindow(WindowConfig)
 						}), {
 							Parent = DropdownContainer,
 							Size = UDim2.new(1, 0, 0, 28),
-							BackgroundTransparency = 0.2,
+							BackgroundTransparency = 1,
 							ClipsDescendants = true
 						}), "Divider")
 
@@ -1202,7 +1203,7 @@ function OrionLib:MakeWindow(WindowConfig)
 						Dropdown.Value = "..."
 						DropdownFrame.F.Selected.Text = Dropdown.Value
 						for _, v in pairs(Dropdown.Buttons) do
-							TweenService:Create(v,TweenInfo.new(.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{BackgroundTransparency = 0.2}):Play()
+							TweenService:Create(v,TweenInfo.new(.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{BackgroundTransparency = 1}):Play()
 							TweenService:Create(v.Title,TweenInfo.new(.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{TextTransparency = 0.4}):Play()
 						end	
 						return
@@ -1212,7 +1213,7 @@ function OrionLib:MakeWindow(WindowConfig)
 					DropdownFrame.F.Selected.Text = Dropdown.Value
 
 					for _, v in pairs(Dropdown.Buttons) do
-						TweenService:Create(v,TweenInfo.new(.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{BackgroundTransparency = 0.2}):Play()
+						TweenService:Create(v,TweenInfo.new(.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{BackgroundTransparency = 1}):Play()
 						TweenService:Create(v.Title,TweenInfo.new(.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{TextTransparency = 0.4}):Play()
 					end	
 					TweenService:Create(Dropdown.Buttons[Value],TweenInfo.new(.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{BackgroundTransparency = 0}):Play()
@@ -1372,7 +1373,7 @@ function OrionLib:MakeWindow(WindowConfig)
 
 				local TextboxActual = AddThemeObject(Create("TextBox", {
 					Size = UDim2.new(1, 0, 1, 0),
-					BackgroundTransparency = 0.2,
+					BackgroundTransparency = 1,
 					TextColor3 = Color3.fromRGB(255, 255, 255),
 					PlaceholderColor3 = Color3.fromRGB(210,210,210),
 					PlaceholderText = "Input",
@@ -1453,7 +1454,7 @@ function OrionLib:MakeWindow(WindowConfig)
 					Position = UDim2.new(select(3, Color3.toHSV(Colorpicker.Value))),
 					ScaleType = Enum.ScaleType.Fit,
 					AnchorPoint = Vector2.new(0.5, 0.5),
-					BackgroundTransparency = 0.2,
+					BackgroundTransparency = 1,
 					Image = "http://www.roblox.com/asset/?id=4805639000"
 				})
 
@@ -1462,7 +1463,7 @@ function OrionLib:MakeWindow(WindowConfig)
 					Position = UDim2.new(0.5, 0, 1 - select(1, Color3.toHSV(Colorpicker.Value))),
 					ScaleType = Enum.ScaleType.Fit,
 					AnchorPoint = Vector2.new(0.5, 0.5),
-					BackgroundTransparency = 0.2,
+					BackgroundTransparency = 1,
 					Image = "http://www.roblox.com/asset/?id=4805639000"
 				})
 
@@ -1488,7 +1489,7 @@ function OrionLib:MakeWindow(WindowConfig)
 				local ColorpickerContainer = Create("Frame", {
 					Position = UDim2.new(0, 0, 0, 32),
 					Size = UDim2.new(1, 0, 1, -32),
-					BackgroundTransparency = 0.2,
+					BackgroundTransparency = 1,
 					ClipsDescendants = true
 				}, {
 					Hue,
@@ -1774,7 +1775,7 @@ local Menu_Notifi = Create("Frame", ScreenGui, {
   Size = UDim2.new(0, 300, 1, 0),
   Position = UDim2.new(1, 0, 0, 0),
   AnchorPoint = Vector2.new(1, 0),
-  BackgroundTransparency = 0.2
+  BackgroundTransparency = 1
 })
 
 local Padding = Create("UIPadding", Menu_Notifi, {
@@ -1795,7 +1796,7 @@ function OrionLib:MakeNotifi(Configs)
   
   local Frame1 = Create("Frame", Menu_Notifi, {
     Size = UDim2.new(2, 0, 0, 0),
-    BackgroundTransparency = 0.2,
+    BackgroundTransparency = 1,
     AutomaticSize = "Y",
     Name = "Title"
   })
@@ -1810,7 +1811,7 @@ function OrionLib:MakeNotifi(Configs)
   local TextLabel = Create("TextLabel", Frame2, {
     Size = UDim2.new(1, 0, 0, 25),
     Font = Configs_HUB.Text_Font,
-    BackgroundTransparency = 0.2,
+    BackgroundTransparency = 1,
     Text = Title,
     TextSize = 20,
     Position = UDim2.new(0, 20, 0, 5),
@@ -1822,7 +1823,7 @@ function OrionLib:MakeNotifi(Configs)
     Text = "X",
     Font = Configs_HUB.Text_Font,
     TextSize = 20,
-    BackgroundTransparency = 0.2,
+    BackgroundTransparency = 1,
     TextColor3 = Color3.fromRGB(200, 200, 200),
     Position = UDim2.new(1, -5, 0, 5),
     AnchorPoint = Vector2.new(1, 0),
@@ -1839,7 +1840,7 @@ function OrionLib:MakeNotifi(Configs)
     AutomaticSize = "Y",
     Text = text,
     Font = Configs_HUB.Text_Font,
-    BackgroundTransparency = 0.2,
+    BackgroundTransparency = 1,
     AutomaticSize = Enum.AutomaticSize.Y,
     TextWrapped = true
   })
@@ -1852,7 +1853,7 @@ function OrionLib:MakeNotifi(Configs)
   })Corner(FrameSize)Create("Frame", Frame2, {
     Size = UDim2.new(0, 0, 0, 5),
     Position = UDim2.new(0, 0, 1, 5),
-    BackgroundTransparency = 0.2
+    BackgroundTransparency = 1
   })
   
   task.spawn(function()
