@@ -316,6 +316,7 @@ CreateElement("ScrollFrame", function(Color, Width)
 		ScrollBarImageColor3 = Color,
 		BorderSizePixel = 0,
 		ScrollBarThickness = Width,
+		Size = UDim2.new(1, 0, 1, 0)
 		CanvasSize = UDim2.new(0, 0, 0, 0)
 	})
 	return ScrollFrame
