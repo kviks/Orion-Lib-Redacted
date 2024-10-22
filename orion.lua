@@ -272,7 +272,7 @@ end)
 
 CreateElement("TFrame", function()
 	local TFrame = Create("Frame", {
-		BackgroundTransparency = 0.2
+		BackgroundTransparency = 1
 	})
 	return TFrame
 end)
@@ -280,7 +280,6 @@ end)
 CreateElement("Frame", function(Color)
 	local Frame = Create("Frame", {
 		BackgroundColor3 = Color or Color3.fromRGB(255, 255, 255),
-		BackgroundTransparency = 0.2
 		BorderSizePixel = 0
 	})
 	return Frame
@@ -302,7 +301,7 @@ CreateElement("Button", function()
 	local Button = Create("TextButton", {
 		Text = "",
 		AutoButtonColor = false,
-		BackgroundTransparency = 0.2,
+		BackgroundTransparency = 1,
 		BorderSizePixel = 0
 	})
 	return Button
@@ -310,7 +309,7 @@ end)
 
 CreateElement("ScrollFrame", function(Color, Width)
 	local ScrollFrame = Create("ScrollingFrame", {
-		BackgroundTransparency = 0.2,
+		BackgroundTransparency = 1,
 		MidImage = "rbxassetid://7445543667",
 		BottomImage = "rbxassetid://7445543667",
 		TopImage = "rbxassetid://7445543667",
@@ -325,7 +324,7 @@ end)
 CreateElement("Image", function(ImageID)
 	local ImageNew = Create("ImageLabel", {
 		Image = ImageID,
-		BackgroundTransparency = 0.2
+		BackgroundTransparency = 1
 	})
 
 	if GetIcon(ImageID) ~= nil then
@@ -338,7 +337,7 @@ end)
 CreateElement("ImageButton", function(ImageID)
 	local Image = Create("ImageButton", {
 		Image = ImageID,
-		BackgroundTransparency = 0.2
+		BackgroundTransparency = 1
 	})
 	return Image
 end)
@@ -351,7 +350,7 @@ CreateElement("Label", function(Text, TextSize, Transparency)
 		TextSize = TextSize or 15,
 		Font = Enum.Font.FredokaOne,
 		RichText = true,
-		BackgroundTransparency = 0.2,
+		BackgroundTransparency = 1,
 		TextXAlignment = Enum.TextXAlignment.Left
 	})
 	return Label
